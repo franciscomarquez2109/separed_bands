@@ -5,9 +5,13 @@ import shutil
 # arreglo con las expresiones regulares
 regularExpressions = [r'550nm',r'660nm',r'790nm',r'735nm']
 # Directorio de origen donde se buscarán los archivos JPG
-sourceDirectory = "/Users/franciscomarquez/Pictures/venturino_1"
+
+#ruta actual
+CurrentRouter = os.getcwd()
+sourceDirectory = CurrentRouter
 # Directorio de destino donde se crearán las carpetas y se moverán los archivos
-destinationDirectory = "/Users/franciscomarquez/Pictures/venturino_1/bandas"
+destinationDirectory = CurrentRouter + "/bandas"
+print(destinationDirectory)
 
 # Crear directorio de destino si no existe
 if not os.path.exists(destinationDirectory):
