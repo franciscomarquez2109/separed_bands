@@ -5,9 +5,12 @@ import shutil
 # arreglo con las expresiones regulares
 regularExpressions = [r'550nm',r'660nm',r'790nm',r'735nm']
 # Directorio de origen donde se buscarán los archivos JPG
-sourceDirectory = "/Users/franciscomarquez/Pictures/venturino_1"
+
+#ruta actual
+currentRouter = os.getcwd()
+sourceDirectory = currentRouter
 # Directorio de destino donde se crearán las carpetas y se moverán los archivos
-destinationDirectory = "/Users/franciscomarquez/Pictures/venturino_1/bandas"
+destinationDirectory = currentRouter + "/bandas"
 
 # Crear directorio de destino si no existe
 if not os.path.exists(destinationDirectory):
@@ -30,7 +33,7 @@ for tifFile in tifFiles:
             folderName = coincidences[0]
 
             # Crear directorio para el nombre si no existe
-            directoryName = os.path.join(sourceDirectory, folderName)
+            directoryName = os.path.join(destinationDirectory, folderName)
             if not os.path.exists(directoryName):
                 os.makedirs(directoryName)
 
